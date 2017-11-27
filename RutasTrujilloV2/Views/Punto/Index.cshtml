@@ -1,0 +1,46 @@
+﻿@model IEnumerable<RutasTrujilloV2.Models.Punto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ruta.Letra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitud)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ruta.Letra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitud)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdPunto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdPunto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdPunto })
+        </td>
+    </tr>
+}
+
+</table>

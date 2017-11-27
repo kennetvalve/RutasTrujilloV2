@@ -1,0 +1,46 @@
+﻿@model IEnumerable<RutasTrujilloV2.Models.Horario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ruta.Letra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoraSalida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoraLlegada)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ruta.Letra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoraSalida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoraLlegada)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdHorario }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdHorario }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdHorario })
+        </td>
+    </tr>
+}
+
+</table>

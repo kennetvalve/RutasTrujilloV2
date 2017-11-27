@@ -1,0 +1,51 @@
+﻿@model RutasTrujilloV2.Models.Ruta
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ruta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.RazonSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.RazonSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Letra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Letra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Origen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Origen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destino)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdRuta }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
