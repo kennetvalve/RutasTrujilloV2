@@ -6,10 +6,12 @@
 }
 
 <h2>Empresas</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@if (User.IsInRole("administrador"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -30,9 +32,12 @@
             @Html.DisplayFor(modelItem => item.Ruc)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdEmpresa }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdEmpresa }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdEmpresa })
+            @Html.ActionLink("Details", "Details", new { id = item.IdEmpresa }) 
+            @if (User.IsInRole("administrador"))
+            {
+                @Html.ActionLink("Edit ", "Edit", new { id = item.IdEmpresa }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdEmpresa })
+            }
         </td>
     </tr>
 }

@@ -33,6 +33,8 @@
     @Html.ActionLink("Tarifarios", "VerTarifa", new { id = Model.IdEmpresa })|    
     @Html.ActionLink("Vehiculos", "VerVehiculo", new { id = Model.IdEmpresa })</h4>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdEmpresa }) |
+@if (User.IsInRole("administrador")) {
+    @Html.ActionLink("Edit ", "Edit", new { id = Model.IdEmpresa })
+}
     @Html.ActionLink("Back to List", "Index")
 </p>

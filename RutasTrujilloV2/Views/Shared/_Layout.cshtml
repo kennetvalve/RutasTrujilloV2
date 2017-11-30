@@ -24,10 +24,13 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Empresa", "Index", "Empresas")</li>
                     <li>@Html.ActionLink("Ruta", "Index", "Ruta")</li>
-                    <li>@Html.ActionLink("Tarifa", "Index", "Tarifa")</li>
-                    <li>@Html.ActionLink("Vehiculo", "Index", "Vehiculo")</li>
-                    <li>@Html.ActionLink("Horario", "Index", "Horario")</li>
-                    <li>@Html.ActionLink("Punto", "Index", "Punto")</li>
+                    @if (User.IsInRole("administrador"))
+                    {
+                        <li>@Html.ActionLink("Tarifa", "Index", "Tarifa")</li>
+                        <li>@Html.ActionLink("Vehiculo", "Index", "Vehiculo")</li>
+                        <li>@Html.ActionLink("Horario", "Index", "Horario")</li>
+                        <li>@Html.ActionLink("Punto", "Index", "Punto")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

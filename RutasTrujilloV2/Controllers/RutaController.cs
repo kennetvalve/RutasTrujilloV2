@@ -113,6 +113,7 @@ namespace RutasTrujilloV2.Controllers
         // POST: Ruta/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+
         public ActionResult DeleteConfirmed(int id)
         {
             Ruta ruta = db.Ruta.Find(id);

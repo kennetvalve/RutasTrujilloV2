@@ -43,6 +43,9 @@
     @Html.ActionLink("Puntos", "VerPunto", new { id = Model.IdEmpresa })
 </h4>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdRuta }) |
-    @Html.ActionLink("Back to List", "Index")
+    @if (User.IsInRole("administrador"))
+    {
+        @Html.ActionLink("Edit ", "Edit", new { id = Model.IdRuta })
+    }
+        @Html.ActionLink("Back to List", "Index")
 </p>

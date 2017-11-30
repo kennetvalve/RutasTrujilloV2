@@ -5,11 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>Rutas</h2>
+@if (User.IsInRole("administrador"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -42,9 +44,12 @@
             @Html.DisplayFor(modelItem => item.Destino)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdRuta }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdRuta }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdRuta })
+            @Html.ActionLink("Details", "Details", new { id = item.IdRuta })
+            @if (User.IsInRole("administrador"))
+            {
+                @Html.ActionLink("Edit ", "Edit", new { id = item.IdRuta })
+                @Html.ActionLink("Delete", "Delete", new { id=item.IdRuta })
+            }
         </td>
     </tr>
 }
