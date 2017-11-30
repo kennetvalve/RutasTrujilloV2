@@ -1,0 +1,35 @@
+﻿@model IEnumerable<RutasTrujilloV2.Models.Punto>
+
+@{
+    ViewBag.Title = "VerPunto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Punto</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitud)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitud)
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

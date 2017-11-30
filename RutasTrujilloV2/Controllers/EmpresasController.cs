@@ -116,6 +116,24 @@ namespace RutasTrujilloV2.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult VerRuta(int? id)
+        {
+            var Ruta = db.Ruta.Where(i => i.IdEmpresa == id);
+            return View(Ruta.ToList());
+        }
+
+        public ActionResult VerTarifa(int? id)
+        {
+            var Tarifa = db.Tarifa.Where(i => i.IdEmpresa == id);
+            return View(Tarifa.ToList());
+        }
+
+        public ActionResult VerVehiculo(int? id)
+        {
+            var Vehiculo = db.Vehiculo.Where(i => i.IdEmpresa == id);
+            return View(Vehiculo.ToList());
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

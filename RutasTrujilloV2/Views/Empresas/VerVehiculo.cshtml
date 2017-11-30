@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RutasTrujilloV2.Models.Vehiculo>
+
+@{
+    ViewBag.Title = "VerVehiculo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>VerVehiculo</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroVehiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Placa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroVehiculo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Placa)
+        </td>
+    </tr>
+}
+   
+
+</table>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -229,6 +229,18 @@
     <Compile Include="Migrations\201711252253088_Cambios.Designer.cs">
       <DependentUpon>201711252253088_Cambios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711292134492_add2.cs" />
+    <Compile Include="Migrations\201711292134492_add2.Designer.cs">
+      <DependentUpon>201711292134492_add2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711292153446_add3.cs" />
+    <Compile Include="Migrations\201711292153446_add3.Designer.cs">
+      <DependentUpon>201711292153446_add3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711292201288_add4.cs" />
+    <Compile Include="Migrations\201711292201288_add4.Designer.cs">
+      <DependentUpon>201711292201288_add4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Empresa.cs" />
@@ -330,6 +342,11 @@
     <Content Include="Views\Punto\Details.cshtml" />
     <Content Include="Views\Punto\Edit.cshtml" />
     <Content Include="Views\Punto\Index.cshtml" />
+    <Content Include="Views\Empresas\VerRuta.cshtml" />
+    <Content Include="Views\Empresas\VerTarifa.cshtml" />
+    <Content Include="Views\Empresas\VerVehiculo.cshtml" />
+    <Content Include="Views\Ruta\VerHorario.cshtml" />
+    <Content Include="Views\Ruta\VerPunto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -353,6 +370,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711252253088_Cambios.resx">
       <DependentUpon>201711252253088_Cambios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711292134492_add2.resx">
+      <DependentUpon>201711292134492_add2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711292153446_add3.resx">
+      <DependentUpon>201711292153446_add3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711292201288_add4.resx">
+      <DependentUpon>201711292201288_add4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

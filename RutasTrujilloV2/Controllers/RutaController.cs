@@ -121,6 +121,18 @@ namespace RutasTrujilloV2.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult VerHorario(int? id)
+        {
+            var Horario = db.Horario.Where(i => i.IdRuta == id);
+            return View(Horario.ToList());
+        }
+
+        public ActionResult VerPunto(int? id)
+        {
+            var Punto = db.Punto.Where(i => i.IdRuta == id);
+            return View(Punto.ToList());
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

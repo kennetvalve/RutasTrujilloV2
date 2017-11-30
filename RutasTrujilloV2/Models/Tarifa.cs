@@ -11,7 +11,7 @@ namespace RutasTrujilloV2.Models
         [Key]
         public int IdTarifa { get; set; }
         public String Tipo { get; set; }
-        public float Precio { get; set; }
+        public int Precio { get; set; }
 
         public int IdEmpresa { get; set; }
         public Empresa Empresa { get; set; }
